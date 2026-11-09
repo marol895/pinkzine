@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  padding: 24px 0;
+  overflow-x: hidden;
+  background-color: #f0488f;
+}
+
+.zine {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto repeat(6, 1fr) auto;
+  gap: 12px;
+  width: 800px;
+  height: 1000px;
+  margin: 0 auto;
+  padding: 28px;
+  background-color: #ffc9de;
+  color: #f0488f;
+  font-family: "Courier Prime", "Courier New", monospace;
+}
+
+.title      { grid-column: 1 / 7; grid-row: 1; }
+.image      { grid-column: 1 / 5; grid-row: 2 / 8; }
+.lyrics-one { grid-column: 4 / 7; grid-row: 2 / 4; }
+.sticker    { grid-column: 6 / 6; grid-row: 6 / 4; }
+.lyrics-two { grid-column: 4 / 7; grid-row: 6 / 8; }
+.song       { grid-column: 1 / 7; grid-row: 8; }
+.spark-one  { grid-column: 5; grid-row: 4; }
+.spark-two  { grid-column: 6; grid-row: 6; }
+
+.title {
+  font-family: "Bagel Fat One", "Arial Black", sans-serif;
+  font-size: 100px;
+  font-weight: normal;
+  text-align: center;
+  filter: drop-shadow(0 0 4px #e589af);
+
+}
+
+.image {
+  min-height: 0;
+  overflow: hidden;
+  border: 10px solid white;
+  border-radius: 20px;
+  background-color: #f0488f;
+  text-align: center;
+}
+
+.image img {
+  width: 800px;
+  height: 800px;
+  position: relative;
+  left: -220px;
+  top: -50px;
+
+}
+
+.lyrics-one,
+.lyrics-two {
+  margin: auto 0;
+  padding: 16px;
+  border: 2px solid #f0488f;
+  border-radius: 12px;
+  background-color: white;
+  font-size: 17px;
+  line-height: 1.5;
+  z-index: 1;
+}
+
+.sticker {
+  width: 130px;
+  height: 130px;
+  margin: auto;
+  border-radius: 50%;
+  background-color: #f0488f;
+  color: white;
+  font-family: "Bagel Fat One", "Arial Black", sans-serif;
+  font-size: 34px;
+  line-height: 130px;
+  text-align: center;
+}
+
+.song {
+  font-family: "Bagel Fat One", "Arial Black", sans-serif;
+  font-size: 58px;
+  font-weight: normal;
+  text-align: right;
+  filter: drop-shadow(0 0 4px #e589af);
+}
+
+.spark-one,
+.spark-two,
+.spark-three {
+  font-size: 44px;
+  text-align: center;
+  color: #f0488f;
+}
+
+.side1, .side2, .side3, .side4 {
+  position: absolute;
+  width: calc((100vw - 800px) / 2);
+  height: 50%;
+  object-fit: cover;
+}
+.side1 { top: 0;   left: calc((100vw - 800px) / -2); }
+.side2 { top: 50%; left: calc((100vw - 800px) / -2); }
+.side3 { top: 0;   right: calc((100vw - 800px) / -2); }
+.side4 { top: 50%; right: calc((100vw - 800px) / -2); }
+
+.zine { position: relative; }
